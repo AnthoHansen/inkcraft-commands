@@ -1,10 +1,16 @@
 Config = {}
 
-Config.WebhookUrl = 'YOUR_WEBHOOK_URL'
+Config.Framework = 'standalone' -- Options: 'standalone', 'esx', 'qb' (qb-core and qbx-core compatible)
 
-Config.Command = 'commandlist'
+Config.WebhookUrl = 'YOUR_WEBHOOK_URL' -- Discord Webhook URL
 
-Config.BlacklistCommands = {
+Config.Command = 'commandlist' -- Command Name
+
+Config.AdminGroups = { -- Permission Groups
+    'admin'
+}
+
+Config.BlacklistCommands = { -- Blacklisted Commands (For not showing in the webhook command list)
     "+",
     "-",
     "_",
