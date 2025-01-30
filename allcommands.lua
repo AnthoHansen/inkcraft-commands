@@ -24,9 +24,9 @@ CreateThread(function()
 end)
 
 local function isAdmin(source)
-    if source == 0 then return true end -- Console always has access
+    if source == 0 then return true end                      -- Console always has access
     if Config.Framework == 'standalone' then return true end -- In standalone mode, everyone has access
-    
+
     if Config.Framework == 'esx' then
         if not ESX then return false end
         local xPlayer = ESX.GetPlayerFromId(source)
@@ -63,22 +63,22 @@ local function splitIntoChunks(arr, maxLength)
     local chunks = {}
     local currentChunk = {}
     local currentLength = 0
-    
+
     for _, item in ipairs(arr) do
         if currentLength + #item + 1 > maxLength then
             table.insert(chunks, table.concat(currentChunk, "\n"))
-            currentChunk = {item}
+            currentChunk = { item }
             currentLength = #item
         else
             table.insert(currentChunk, item)
             currentLength = currentLength + #item + 1
         end
     end
-    
+
     if #currentChunk > 0 then
         table.insert(chunks, table.concat(currentChunk, "\n"))
     end
-    
+
     return chunks
 end
 
@@ -86,9 +86,9 @@ RegisterCommand(Config.Command, function(source, args, rawCommand)
     if not isAdmin(source) then
         if source > 0 then
             TriggerClientEvent('chat:addMessage', source, {
-                color = {255, 0, 0},
+                color = { 255, 0, 0 },
                 multiline = true,
-                args = {"System", "You don't have permission to use this command."}
+                args = { "System", "You don't have permission to use this command." }
             })
         end
         return
@@ -111,9 +111,9 @@ RegisterCommand(Config.Command, function(source, args, rawCommand)
         TriggerEvent('ic-commands:server:sendDiscord', commandsTable)
         if source > 0 then
             TriggerClientEvent('chat:addMessage', source, {
-                color = {255, 255, 0},
+                color = { 255, 255, 0 },
                 multiline = true,
-                args = {"System", "Command list sent to Discord."}
+                args = { "System", "Command list sent to Discord." }
             })
         end
     else
@@ -128,15 +128,15 @@ RegisterNetEvent('ic-commands:server:sendDiscord', function(commandsTable)
     end
 
     local webhookUrl = Config.WebhookUrl
-    
+
     local messageHeader = "**Available Command List**\n```\n"
     local messageFooter = "\n```"
-    
+
     local chunks = splitIntoChunks(commandsTable, 1900)
-    
+
     for i, chunk in ipairs(chunks) do
         local content = messageHeader .. chunk .. messageFooter
-        
+
         local data = {
             content = content,
             username = 'IC-Commands'
@@ -144,8 +144,8 @@ RegisterNetEvent('ic-commands:server:sendDiscord', function(commandsTable)
 
         PerformHttpRequest(webhookUrl, function(err, text, headers)
             print(string.format("Chunk %d sent correctly", i))
-        end, 'POST', json.encode(data), {['Content-Type'] = 'application/json'})
-        
+        end, 'POST', json.encode(data), { ['Content-Type'] = 'application/json' })
+
         Wait(2000)
     end
 end)
