@@ -6,5 +6,5 @@ version '1.1.0'
 author 'AnthoHansen'
 description 'Get all commands of your server and send them to a fancy discord webhook, make your admin job easier'
 
-server_script 'allcommands.lua'
+server_script 'commands.lua'
 shared_script 'config.lua'
