@@ -12,21 +12,25 @@ Un recurso de FiveM que permite a los administradores del servidor generar y env
 5. Reinicia tu servidor. ¡Y listo!
 
 ## Configuración
-Edita el archivo `config.lua` para personalizarlo.
+Edita el archivo `config.lua` para personalizarlo: BlacklistCommands, AdminGroups, Command, WebhookUrl y Framework.
 
 ## Características
+- **Compatibilidad con Frameworks**: El script puede usarse como **Standalone** pero también es compatible con ESX, QBCore y QBox con los permisos de grupo.
 - **Filtrado de Comandos**: Recupera automáticamente todos los comandos registrados en el servidor, excluyendo comandos del sistema y aquellos que coincidan con prefijos en lista negra.
 - **Integración con Discord**: Envía la lista de comandos formateada a Discord mediante un webhook configurable.
 - **Gestión de Bloques**: Maneja listas de comandos extensas dividiéndolas en bloques para cumplir con los límites de caracteres de Discord.
 - Ordena los comandos alfabéticamente para mejor legibilidad.
 - Comando configurable.
+- Comandos configurables en blacklist.
 - Lista de comandos en lista negra configurable.
+- Configurable el apartado de grupos de administración.
 - **Limitación de Tasa**: Implementa retrasos entre mensajes para evitar restricciones de envío en Discord.
 - **Manejo de Errores**: Incluye validaciones de errores detalladas como: validación de listas de comandos inválidas, detección de listas vacías, confirmación de envío del webhook y retroalimentación para el jugador sobre el estado de ejecución.
 
 ## Dependencias
 - Servidor FiveM
 - URL del webhook de Discord
+- Compatible con ESX, QBCore y QBox.
 
 ## Detalles Técnicos
 - Escrito en Lua.
@@ -34,13 +38,6 @@ Edita el archivo `config.lua` para personalizarlo.
 - Implementa la API de webhooks de Discord.
 - Maneja mensajes de hasta 2000 caracteres (límite de Discord).
 - Incluye protección integrada contra limitaciones de tasa.
-
-## Manejo de Errores
-El script incluye varias verificaciones de error:
-- Validación de listas de comandos inválidas.
-- Detección de listas de comandos vacías.
-- Confirmación del envío del webhook.
-- Retroalimentación al jugador sobre el estado de ejecución.
 
 ## Contribución
 Si deseas mejorar este script, siéntete libre de hacer un fork del repositorio y enviar pull requests. Para cambios importantes, abre un issue primero para discutir qué te gustaría modificar.

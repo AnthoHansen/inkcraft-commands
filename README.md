@@ -38,8 +38,5 @@ Edit the `config.lua` file to customize: BlacklistCommands, AdminGroups, Command
 - Handles messages up to 2000 characters (Discord limit).
 - Includes built-in rate limiting protection.
 
-## Error Handling
-The script includes various error checks:
-
 ## Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
