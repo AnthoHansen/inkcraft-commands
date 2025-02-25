@@ -7,7 +7,7 @@ A FiveM resource that allows server administrators to generate and send a list o
 ## Installation
 1. Download the resource
 2. Place it in your FiveM resources folder
-3. Add `ensure ic-commands` to your `server.cfg`
+3. Add `ensure inkcraft-commands` to your `server.cfg`
 4. Configure your Discord webhook URL in the script
 5. Restart your server. Et voilà.
 
