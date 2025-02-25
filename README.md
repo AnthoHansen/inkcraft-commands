@@ -1,4 +1,4 @@
-# IC-Commands
+# InkCraft-Commands
 A FiveM resource that allows server administrators to generate and send a list of available commands on the server to Discord using webhooks. Make your admins happy.
 
 ## Warning
