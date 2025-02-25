@@ -1,4 +1,4 @@
-# IC-Commands
+# inkcraft-commands
 Un recurso de FiveM que permite a los administradores del servidor generar y enviar una lista de comandos disponibles a Discord mediante webhooks.
 
 ## Advertencia
@@ -7,7 +7,7 @@ Un recurso de FiveM que permite a los administradores del servidor generar y env
 ## Instalación
 1. Descarga el recurso.
 2. Colócalo en la carpeta de recursos de FiveM.
-3. Agrega `ensure ic-commands` en tu `server.cfg`.
+3. Agrega `ensure inkcraft-commands` en tu `server.cfg`.
 4. Configura la URL del webhook de Discord en el script.
 5. Reinicia tu servidor. ¡Y listo!
 
